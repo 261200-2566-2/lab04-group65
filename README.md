@@ -1,6 +1,8 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/DRqen68Y)
-RPG Character Interface
-public interface RPGCharacter {
+
+-RPG Character Interface
+
+ public interface RPGCharacter {
     // Common character attributes
     String getName();
     int getLevel();
@@ -25,25 +27,27 @@ public interface RPGCharacter {
     void addArmor(int armor); // Method to add Armor to the character
     void setMana(int mana);
     void setCurrentHP(int currentHP);
-}
+  }
 
-Warrior Interface (Implementing RPGCharacter)
-public interface Warrior extends RPGCharacter {
+ -Warrior Interface (Implementing RPGCharacter)
+
+  public interface Warrior extends RPGCharacter {
     // Warrior-specific abilities
     void useSlashAttack();
     void useDefend();
-}
+  }
 
-Mage Interface (Implementing RPGCharacter)
+-Mage Interface (Implementing RPGCharacter)
+
 public interface Mage extends RPGCharacter {
     // Mage-specific abilities
     void castSpell(String spell);
     void meditate();
-}
+  }
 
-Accessory Interface
-// Accessory Interface
-public interface Accessory {
+ -Accessory Interface
+
+  public interface Accessory {
     // Get accessory name
     String getName();
     // Apply accessory effects
@@ -52,10 +56,11 @@ public interface Accessory {
     void addMana(RPGCharacter character, int manaBonus);
     void addAttackSpeed(RPGCharacter character, int attackSpeedBonus);
     void addArmor(RPGCharacter character, int armorBonus);
-}
+  }
 
-Gauntlet Class (Implementing Accessory)
-public class Gauntlet implements Accessory {
+  -Gauntlet Class (Implementing Accessory)
+
+  public class Gauntlet implements Accessory {
     private String name;
     private int strengthBonus;
     private int hpBonus;
@@ -83,10 +88,11 @@ public class Gauntlet implements Accessory {
         int newHP = currentHP + hpBonus;
         character.setCurrentHP(newHP);  
     }  
-}
+  }
 
-Ring Class (Implementing Accessory)
-public class Ring implements Accessory {
+  -Ring Class (Implementing Accessory)
+
+    public class Ring implements Accessory {
     private String name;
     private int intelligenceBonus;
     private int manaBonus;
@@ -105,7 +111,6 @@ public class Ring implements Accessory {
         int currentIntelligence = character.getIntelligence();
         int newIntelligence = currentIntelligence + intelligenceBonus;
         character.setIntelligence(newIntelligence);
-
         // Apply mana bonus to the character
         addMana(character, manaBonus);
     }
